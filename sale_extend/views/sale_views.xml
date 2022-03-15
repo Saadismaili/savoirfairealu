@@ -31,6 +31,17 @@
                     <field name="prix_metre_caree" attrs = "{'invisible':[('compute_type','=','simple')]}"/>
                     <field name="type_moteur" attrs = "{'invisible':[('type','!=','rideau')]}"/>
                 </xpath>
+                <xpath expr="//page/field[@name='order_line']/tree/field[@name='product_id']" position="after">
+                    <field name="compute_type" invisible ="1"/>
+                    <field name="type"/>
+                    <field name="code" attrs = "{'invisible':[('type','=','travaux')]}"/>
+                    <field name="niveau" attrs = "{'invisible':[('type','=','travaux')]}"/>
+                    <field name="emplacement" attrs = "{'invisible':[('type','=','travaux')]}"/>
+                    <field name="width" attrs = "{'invisible':[('type','=','travaux')]}"/>
+                    <field name="height" attrs = "{'invisible':[('type','=','travaux')]}"/>
+                    <field name="prix_metre_caree" attrs = "{'invisible':[('compute_type','=','simple')]}"/>
+                    <field name="type_moteur" attrs = "{'invisible':[('type','!=','rideau')]}"/>
+                </xpath>
                  <xpath expr="//page/field[@name='order_line']/form/group/group/field[@name='product_id']" position="after">
                     <field name="product_type_id" domain="[('product_id','=', product_id)]" attrs = "{'readonly':[('product_id','=',False)],
                     'invisible':[('type','in',('rideau','travaux'))]}"/>
