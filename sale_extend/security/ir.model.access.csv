@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_niveau_user,sale line niveau user,sale.sale_line_niveau,sales_team.group_sale_manager,1,0,0,0
+access_niveau_manager,sale line niveau manager,sale.sale_line_niveau,sales_team.group_sale_salesman_all_leads,1,1,1,1
+access_emplacement_user,sale line emplacement user,sale.sale_line_emplacement,sales_team.group_sale_manager,1,0,0,0
+access_emplacement_manager,sale line emplacement manager,sale.sale_line_emplacement,sales_team.group_sale_salesman_all_leads,1,1,1,1
+access_type_moteur_user,sale line type moteur user,sale.sale_type_moteur,sales_team.group_sale_manager,1,0,0,0
+access_type_moteur_manager,sale line type moteur manager,sale.sale_type_moteur,sales_team.group_sale_salesman_all_leads,1,1,1,1
+

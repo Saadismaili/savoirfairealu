@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_order_form_dimension">
+            <field name="name">sale.order.form.dimension</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="after">
+                    <field name="compute_type" invisible ="1"/>
+                    <field name="type"/>
+                    <!--<field name="height" attrs = "{'readonly':[('compute_type','=','simple')]}"/>-->
+                </xpath>
+                <xpath expr="//field[@name='order_line']" position="before">
+                    <field name="description"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree" position="attributes">
+                    <attribute name="editable"/>
+                </xpath>
+
+                <xpath expr="//page/field[@name='order_line']/form/group/group/field[@name='product_id']" position="after">
+                    <field name="compute_type" invisible ="1"/>
+                    <field name="type"/>
+                    <field name="code" attrs = "{'invisible':[('type','=','travaux')]}"/>
+                    <field name="niveau" attrs = "{'invisible':[('type','=','travaux')]}"/>
+                    <field name="emplacement" attrs = "{'invisible':[('type','=','travaux')]}"/>
+                    <field name="width" attrs = "{'invisible':[('type','=','travaux')]}"/>
+                    <field name="height" attrs = "{'invisible':[('type','=','travaux')]}"/>
+                    <field name="prix_metre_caree" attrs = "{'invisible':[('compute_type','=','simple')]}"/>
+                    <field name="type_moteur" attrs = "{'invisible':[('type','!=','rideau')]}"/>
+                </xpath>
+                 <xpath expr="//page/field[@name='order_line']/form/group/group/field[@name='product_id']" position="after">
+                    <field name="product_type_id" domain="[('product_id','=', product_id)]" attrs = "{'readonly':[('product_id','=',False)],
+                    'invisible':[('type','in',('rideau','travaux'))]}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
